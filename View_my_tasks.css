@@ -1,0 +1,33 @@
+
+.li{
+    float:right; padding-left: 15px; padding-right: 15px; display: block;font-size: 20px;
+    a:hover{
+    color:grey;
+    }
+    a{
+    color: white;
+    text-decoration: none;
+    }
+}
+
+
+.show-todo-section {
+width: 500px;
+background-color:rgba(40, 234, 114, 0.323);
+margin: 30px auto;
+padding: 10px;
+border-radius: 5px;
+margin-top:-50px;
+min-height:350px;
+}
+
+.todo-item {
+width: 400px;
+margin: 10px auto;
+padding: 20px 10px;
+box-shadow: 0 4px 8px 0 #ccc, 0 6px 20px 0 #ccc;
+border-radius: 5px;
+}
+.todo-item:hover{
+background-color:aquamarine;
+}

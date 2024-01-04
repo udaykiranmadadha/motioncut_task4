@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Register</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width">
+  <style>
+    .error-message {
+      color: red;
+    }
+
+    .success-message {
+      color: green;
+    }
+  </style>
+</head>
+<body style="background-image: url(homeback.jpg);background-attachment: fixed;background-size: cover;">
+  <div>
+    <h1 class="heading1">Registration</h1>
+    <form class="formmm" onsubmit="return validateForm()" action="register.php" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="your name" required>
+      <br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Email address" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+      <br>
+      <label for="phnno">Phn. No.:</label>
+      <input type="tel" id="phnno" name="phnno" placeholder="phone no." required>
+      <br>
+      <label for="username">User Name:</label>
+      <input type="text" id="username" name="username" placeholder="New user name" required>
+      <br>
+      <label for="pswd">Password:</label>
+      <input type="password" id="pswd" name="password" placeholder="New password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="password should be 8 characters, one uppercase and one lowercase" required>
+      <br>
+      <label for="cnfpswd">Confirm Password:</label>
+      <input type="password" id="cnfpswd" placeholder="Confirm password" required>
+      <br>
+      <span id="errorMessage" class="error-message"></span>
+      <br>
+      <span id="successMessage" class="success-message"></span>
+      <br>
+      <input type="submit" value="Register">
+      <br>
+      <button style="background-color:rgba(83, 238, 238, 0.5); border-radius: 5px;"><a style="text-decoration: none; color: black;" href="Login.html">Login</a></button>
+    </form>
+    
+  </div>
+  <script>
+    function validateForm() {
+        console.log("Validation function called");
+      var password = document.getElementById("pswd").value;
+      var confirmPassword = document.getElementById("cnfpswd").value;
+      var errorMessage = document.getElementById("errorMessage");
+      var successMessage = document.getElementById("successMessage");
+
+      if (password !== confirmPassword) {
+        errorMessage.innerHTML = "Passwords do not match!";
+        successMessage.innerHTML = "";
+        return false;
+      } else {
+        errorMessage.innerHTML = "";
+        successMessage.innerHTML = "Registration successful! Redirecting...";
+        return true;
+      }
+    }
+  </script>
+  <footer style="background-color: black; color: white; padding: 20px; text-align: center; position: fixed; bottom: 0; width: 100%;">
+    &copy; 2023 Uday Kiran Software Solutions. All rights reserved.
+  </footer>
+
+</body>
+</html>
